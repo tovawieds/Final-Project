@@ -1,11 +1,45 @@
 <!DOCTYPE html>
+
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}- FlaskApp</title>
+    <style>
+        .post {
+            padding: 10px;
+            margin: 5px;
+            background-color: #f3f3f3
+        }
+
+        nav a {
+            color: #d64161;
+            font-size: 3em;
+            margin-left: 50px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('index') }}">FlaskApp</a>
+        <a href="#">About</a>
+    </nav>
+    <hr>
+    <div class="content">
+        {% block content %} {% endblock %}
+    </div>
+</body>
+</html>
+
 <!-- <html>
 <table>
     <tr><th></th></tr>
 </table>
 </html> -->
 
-{% block body %}
+<!-- {% block body %}
     <h1> Employees </h1>
     <ul>
         {% for employee in employees %}
@@ -13,7 +47,7 @@
         {% endfor %}
     </ul>
 
-{% endblock %}
+{% endblock %} -->
 
 
 

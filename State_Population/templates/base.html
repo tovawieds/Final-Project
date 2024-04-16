@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- <html>
+<table>
+    <tr><th></th></tr>
+</table>
+</html> -->
+
+{% block body %}
+    <h1> Employees </h1>
+    <ul>
+        {% for employee in employees %}
+        <li> {{ employee }}</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
+
+
+
+
+
+<!-- # Connect to the SQLite database
+conn = sqlite3.connect('my_database.sqlite')
+
+# Create a cursor object
+c = conn.cursor()
+
+# Execute a query to get the data from the database
+c.execute('SELECT * FROM my_table')
+
+# Get the data from the cursor object
+data = c.fetchall()
+
+# Close the connection to the database
+conn.close()
+
+# Create a table in HTML
+html_table = """<table>
+  <thead>
+    <tr>
+      <th>Column 1</th>
+      <th>Column 2</th>
+    </tr>
+  </thead>
+  <tbody>
+"""
+
+# Loop through the data and add it to the HTML table
+for row in data:
+  html_table += """<tr>
+    <td>{}</td>
+    <td>{}</td>
+  </tr>""".format(row[0], row[1])
+
+# Add the closing tags to the HTML table
+html_table += """</tbody>
+</table>"""
+
+# Print the HTML table
+print(html_table) -->

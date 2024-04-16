@@ -33,4 +33,5 @@ def read_file(file, table):  # a method to read the data from a csv file and add
 
 if __name__ == '__main__':
     # create_connection("db.sqlite")  # create the table
-    #read_file('data.csv', 'db.sqlite')  # insert values into database
+    # read_file('data.csv', 'db.sqlite')  # insert values into database
+    return None

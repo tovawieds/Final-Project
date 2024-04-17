@@ -1,8 +1,60 @@
 <!DOCTYPE html>
-
-
-
 <html lang="en">
+
+<title>State Population</title>
+
+
+<body>
+  <div style="margin-top: 50px;" class="ui container">
+    <h1 class="ui center aligned header">State Population Estimate 2023</h1>
+
+      <form class="ui form" action="/go" method="post">
+          <div class="field">
+              <label>Enter a number 0-50,000,000:</label>
+              <input type="text" name="num" placeholder="Enter Number...">
+              <button class="ui blue button" type="submit">Go</button> <br>
+          </div>
+      </form>
+
+<br></br>
+<head>
+  <style>
+    table, th, td {
+      Border: 1px solid black;
+    }
+  </style>
+</head>
+
+<table id="table">
+  <tr>
+    <th>Rank</th>
+    <th>State</th>
+    <th>FIPS Code</th>
+    <th>Population</th>
+  </tr>
+  {% for u in usr %}
+  <tr>
+    <td>{{ u[0] }}</td>
+    <td>{{ u[1] }}</td>
+    <td>{{ u[2] }}</td>
+    <td>{{ u[3] }}</td>
+  </tr>
+{% endfor %}
+
+{% for u in rslt %}
+  <tr>
+    <td>{{ u[0] }}</td>
+    <td>{{ u[1] }}</td>
+    <td>{{ u[2] }}</td>
+    <td>{{ u[3] }}</td>
+  </tr>
+{% endfor %}
+</table>
+
+
+</html>
+
+<!-- <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %} {% endblock %}- FlaskApp</title>
@@ -91,4 +143,4 @@ html_table += """</tbody>
 </table>"""
 
 # Print the HTML table
-print(html_table) -->
+print(html_table) --> -->

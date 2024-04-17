@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<title>State Population</title>
+
+<h1>State Population Estimate 2023</h1>
+
+
+<body>
+  <div style="margin-top: 50px;" class="ui container">
+      <h1 class="ui center aligned header">To Do App</h1>
+
+      <form class="ui form" action="/go" method="post">
+          <div class="field">
+              <label>Enter a number 0-50,000,000:</label>
+              <input type="text" name="num" placeholder="Enter Number..."><br>
+              <button class="ui blue button" type="submit">Go</button>
+          </div>
+      </form>
+
+
+<head>
+  <style>
+    table, th, td {
+      Border: 1px solid black;
+    }
+  </style>
+</head>
+
+<label for="Number">Enter a number 0-50,000,000:</label>
+<input type="text" id="Number" name="Number">
+<button id="Number" name="Number">Go</button>
+<br></br>
+
+<table id="table">
+  <tr>
+    <th>Rank</th>
+    <th>State</th>
+    <th>FIPS Code</th>
+    <th>Population</th>
+  </tr>
+  {% for u in rslt %}
+  <tr>
+    <td>{{ u[0] }}</td>
+    <td>{{ u[1] }}</td>
+    <td>{{ u[2] }}</td>
+    <td>{{ u[3] }}</td>
+  </tr>
+{% endfor %}
+</table>
+
+
+</html>

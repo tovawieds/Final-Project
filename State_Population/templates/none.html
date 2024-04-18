@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<title>State Population</title>
+
+<head>
+  <style>
+    /* center */
+    .center{
+      margin: auto;
+      width: 50%;
+      padding: 10px;
+    }
+    /* font */
+    .font{
+      font-family: Arial, Helvetica, sans-serif;
+    }
+  </style>
+</head>
+
+
+<!-- header -->
+<body class="font">
+<title>State Population</title>
+<div style="margin-top: 50px;" class="container">
+  <h1 class="ui center aligned header">State Population Estimate 2023</h1>
+  <div class="center">This site contains a list of the population in each state. <br>To search for all states with a population greater than a specified number, enter the number below, and the results will rank in order.</div>
+
+<div class="center">
+<!-- search box and button -->
+    <form class="ui form" action="/go" method="post">
+        <div class="field">
+            <label>Enter a number:</label>
+            <input type="number" name="num" placeholder="Enter Number...">
+            <button class="ui blue button" type="submit">Go</button> <br>
+        </div>
+    </form>
+</div>
+
+
+<br></br>
+<!-- message for no matching results -->
+<div class="center">Your search has no matching results.</div>
+</body>
+</html>
+
+

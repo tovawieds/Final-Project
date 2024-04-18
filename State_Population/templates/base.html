@@ -1,30 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <style>
+      /* border design and background */
+      table, td {
+        Border: 1px solid black;
+        background-color: aliceblue;
+      }
+      th{
+        background-color: deepskyblue;
+        Border: 1px solid black;
+      }
+      /* center */
+      .center{
+        margin: auto;
+        width: 50%;
+        padding: 10px;
+      }
+      /* font */
+      .font{
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    </style>
+  </head>
 
-<title>State Population</title>
 
-
-<body>
-  <div style="margin-top: 50px;" class="ui container">
+<!-- header -->
+<body class="font">
+  <title>State Population</title>
+  <div style="margin-top: 50px;" class="container">
     <h1 class="ui center aligned header">State Population Estimate 2023</h1>
+    <div class="center">This site contains a list of the population in each state. <br>To search for all states with a population greater than a specified number, enter the number below, and the results will rank in order.</div>
 
+<div class="center">
+<!-- search box and button -->
       <form class="ui form" action="/go" method="post">
           <div class="field">
-              <label>Enter a number 0-50,000,000:</label>
-              <input type="text" name="num" placeholder="Enter Number...">
+              <label>Enter a number:</label>
+              <input type="number" name="num" placeholder="Enter Number...">
               <button class="ui blue button" type="submit">Go</button> <br>
           </div>
       </form>
-
+</div>
 <br></br>
-<head>
-  <style>
-    table, th, td {
-      Border: 1px solid black;
-    }
-  </style>
-</head>
 
+<!-- table -->
+<div class="center"> 
 <table id="table">
   <tr>
     <th>Rank</th>
@@ -32,6 +53,7 @@
     <th>FIPS Code</th>
     <th>Population</th>
   </tr>
+  <!-- opening page -->
   {% for u in usr %}
   <tr>
     <td>{{ u[0] }}</td>
@@ -41,6 +63,7 @@
   </tr>
 {% endfor %}
 
+<!-- table when user searches -->
 {% for u in rslt %}
   <tr>
     <td>{{ u[0] }}</td>
@@ -50,97 +73,8 @@
   </tr>
 {% endfor %}
 </table>
-
-
-</html>
-
-<!-- <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{% block title %} {% endblock %}- FlaskApp</title>
-    <style>
-        .post {
-            padding: 10px;
-            margin: 5px;
-            background-color: #f3f3f3
-        }
-
-        nav a {
-            color: #d64161;
-            font-size: 3em;
-            margin-left: 50px;
-            text-decoration: none;
-        }
-    </style>
-</head>
-<body>
-    <nav>
-        <a href="{{ url_for('index') }}">FlaskApp</a>
-        <a href="#">About</a>
-    </nav>
-    <hr>
-    <div class="content">
-        {% block content %} {% endblock %}
-    </div>
+</div>
 </body>
+
 </html>
 
-<!-- <html>
-<table>
-    <tr><th></th></tr>
-</table>
-</html> -->
-
-<!-- {% block body %}
-    <h1> Employees </h1>
-    <ul>
-        {% for employee in employees %}
-        <li> {{ employee }}</li>
-        {% endfor %}
-    </ul>
-
-{% endblock %} -->
-
-
-
-
-
-<!-- # Connect to the SQLite database
-conn = sqlite3.connect('my_database.sqlite')
-
-# Create a cursor object
-c = conn.cursor()
-
-# Execute a query to get the data from the database
-c.execute('SELECT * FROM my_table')
-
-# Get the data from the cursor object
-data = c.fetchall()
-
-# Close the connection to the database
-conn.close()
-
-# Create a table in HTML
-html_table = """<table>
-  <thead>
-    <tr>
-      <th>Column 1</th>
-      <th>Column 2</th>
-    </tr>
-  </thead>
-  <tbody>
-"""
-
-# Loop through the data and add it to the HTML table
-for row in data:
-  html_table += """<tr>
-    <td>{}</td>
-    <td>{}</td>
-  </tr>""".format(row[0], row[1])
-
-# Add the closing tags to the HTML table
-html_table += """</tbody>
-</table>"""
-
-# Print the HTML table
-print(html_table) --> -->
